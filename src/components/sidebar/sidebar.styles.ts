@@ -17,13 +17,13 @@ export const SidebarWrapper = styled.div`
   display: flex;
   transition: transform 0.4s cubic-bezier(0.28, 0.47, 0.29, 0.86) 0s,
     opacity 0.4s ease-in-out 100ms;
-   padding:  0.5625rem 1.275rem;
+  padding: 0.5625rem 1.275rem;
   @media only screen and ${deviceSize.sm} {
     min-width: auto;
     width: 474px;
   }
-  & > div{
-  width: 100%
+  & > div {
+    width: 100%;
   }
 `;
 
@@ -33,7 +33,6 @@ export const SidebarContainer = styled.div`
   max-width: 700px;
   width: 80%;
 `;
-
 
 export const Background = styled.div`
   background: rgb(205, 209, 206);
@@ -71,22 +70,22 @@ cursor: pointer;
 `;
 
 export const SelectCurrencyWrapper = styled.div`
-    height: fit-content;
+  height: fit-content;
+  position: relative;
+  width: auto;
+  & > select {
+    outline: 0px;
     position: relative;
-    width: auto;
-    & > select {
-      outline: 0px;
-      position: relative;
-      transition: all 0.2s ease 0s;
-      padding: 2px 12px 1px;
-      line-height: normal;
-      height: 38px;
-      background: transparent;
-      border-radius: 0px;
-      border: 0px;
-      font-size: 0.81rem;
-      @media only screen and ${deviceSize.sm} {
-        height: 52px;
-      }
+    transition: all 0.2s ease 0s;
+    padding: 2px 12px 1px;
+    line-height: normal;
+    height: 38px;
+    background: transparent;
+    border-radius: 0px;
+    border: 0px;
+    font-size: 0.81rem;
+    @media only screen and ${deviceSize.sm} {
+      height: 52px;
     }
-`
+  }
+`;

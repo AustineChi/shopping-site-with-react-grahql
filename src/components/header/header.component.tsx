@@ -40,7 +40,10 @@ const Header: React.FC = () => {
         <CartWrapper>
           <img src={cart} alt="cart" />
           <p>
-            {cartItems.reduce((current, cartItem) => current + cartItem.quantity, 0)}
+            {cartItems.reduce(
+              (current, cartItem) => current + cartItem.quantity,
+              0
+            )}
           </p>
         </CartWrapper>
         <SelectCurrencyWrapper>

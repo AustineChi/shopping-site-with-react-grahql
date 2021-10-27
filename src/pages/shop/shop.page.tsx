@@ -26,8 +26,12 @@ const Learn: React.FC = () => {
         products={data?.products || []}
         handleSidebar={handleSidebar}
       />
-      {openSidebar && <Sidebar handleSidebar={handleSidebar}          products={data?.products || []}
-/>}
+      {openSidebar && (
+        <Sidebar
+          handleSidebar={handleSidebar}
+          products={data?.products || []}
+        />
+      )}
     </div>
   );
 };

@@ -9,17 +9,21 @@ import {
 
 interface ProductsGridProps {
   products: ProductItem[];
-  handleSidebar: () => void
+  handleSidebar: () => void;
 }
 const ProductsGrid: React.FC<ProductsGridProps> = ({
   products,
-  handleSidebar
+  handleSidebar,
 }: ProductsGridProps) => {
   return (
     <ProductGridWrapper>
       <ProductGridContainer>
         {products?.map((product) => (
-          <ProductGridItem product={product} key={product.id} handleSidebar={handleSidebar}/>
+          <ProductGridItem
+            product={product}
+            key={product.id}
+            handleSidebar={handleSidebar}
+          />
         ))}
       </ProductGridContainer>
     </ProductGridWrapper>

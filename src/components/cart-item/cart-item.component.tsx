@@ -66,7 +66,13 @@ const CartItem: React.FC<PageDescriptionProps> = ({
               justifyContent="space-between"
               border=" 1px solid rgb(226, 230, 227)"
             >
-              <ControlButton onClick={() => handleQuantity(id, "decrement")}>
+              <ControlButton
+                onClick={() =>
+                  (quantity === 1)
+                    ? deleteItem(id)
+                    : handleQuantity(id, "decrement")
+                }
+              >
                 -
               </ControlButton>
               <p>{quantity}</p>
@@ -84,9 +90,9 @@ const CartItem: React.FC<PageDescriptionProps> = ({
             </Text>
           </Box>
         </Box>
-          <ProductImageWrapper>
-            <img src={image_url} alt={title} />
-          </ProductImageWrapper>
+        <ProductImageWrapper>
+          <img src={image_url} alt={title} />
+        </ProductImageWrapper>
       </Box>
     </Box>
   );

@@ -28,34 +28,26 @@ const Sidebar: React.FC<SidebarProps> = ({
 }: SidebarProps) => {
   const currencyList = useGetCurrencies();
   const cartItems: CartInterface[] = useReactiveVar(setCart);
+
   const selectedCurrency = useReactiveVar(setSelectedCurrency);
 
   function handleQuantity(id: number, type: string) {
-    const cartItems = [...setCart()];
-
     if (type === "increment") {
-      cartItems.find((item: CartInterface) => item.id === id).quantity += 1;
+      setCart().find((item: CartInterface) => item.id === id).quantity += 1;
       setCart([...cartItems]);
     }
 
     if (type === "decrement") {
-      const quantity = cartItems.find(
-        (item: CartInterface) => item.id === id
-      ).quantity;
-
-      quantity === 1
-        ? deleteItem(id)
-        : (cartItems.find(
-            (item: CartInterface) => item.id === id
-          ).quantity -= 1);
+      setCart().find((item: CartInterface) => item.id === id).quantity -= 1;
       setCart([...cartItems]);
     }
   }
 
   function deleteItem(id: number) {
-    setCart(setCart().filter((products: CartInterface) => products.id !== id));
+    setCart(
+      [...setCart()].filter((cartItem: CartInterface) => cartItem.id !== id)
+    );
   }
-
 
   return (
     <>
